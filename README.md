@@ -1,5 +1,5 @@
 
-# Generating-Signed-APK on Windows
+# Generating-Signed-APK on Windows and Generate the Development and Release Key Hashes for Facebook.
 
 Android requires that all apps be digitally signed with a certificate before they can be installed, so to distribute the Android application via [Google Play store](https://play.google.com/store), a signed release APK is needed.
 
@@ -79,11 +79,28 @@ android {
 ...
 ```
 
+## Generating the Development and Release Key Hashes for A App (Facebook)
+
+To ensure the authenticity of the interactions between the app and Facebook, one need to supply us with the Android key hash for the development environment. If the app has already been published, one should add the release key hash too.
+
+### Generating a Development Key Hash
+
+There will be a unique development key hash for each Android Development Environment.
+
+> In Windows, Key and Certificate Management Tool (keytool) from the Java Development Kit is needed which we have discussed above, `openssl-for-windows` openssl library for Windows from the [Google Code Archive](https://code.google.com/archive/p/openssl-for-windows/downloads).
+
+To generate a development key hash, run the following command in a command prompt in the Java SDK folder: 
+
+```
+keytool -exportcert -alias androiddebugkey -keystore "C:\Users\USERNAME\.android\debug.keystore" | "PATH_TO_OPENSSL_LIBRARY\bin\openssl" sha1 -binary | "PATH_TO_OPENSSL_LIBRARY\bin\openssl" base64   
+```
+
 ### Generating the release APK
 
 Simply run the following in a terminal:
 
-```sh
+```
+sh
 $ cd android
 $ ./gradlew assembleRelease
 ```
