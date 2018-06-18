@@ -1,15 +1,15 @@
 
-# Generating-Signed-APK
+# Generating-Signed-APK on Windows
 
 Android requires that all apps be digitally signed with a certificate before they can be installed, so to distribute the Android application via [Google Play store](https://play.google.com/store), a signed release APK is needed.
 
 ## Installation
 
-### Requirements
+## Requirements
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 * [Android Studio](https://developer.android.com/studio/)
 
-### Setting up Java Path
+## Setting up Java Path
 
   Assuming Java is installed in `C:\Program Files\Java\jdkx.x.x_x` directory −
 * Right-click on `My Computer` and select `Properties`.
@@ -17,7 +17,7 @@ Android requires that all apps be digitally signed with a certificate before the
 * Now, click on the `Path` variable so that it also contains the path to the Java executable.
 * Now add the path `C:\Program Files\Java\jdkx.x.x_x\bin`
 
-### Generating a Signing Key
+## Generating a Signing Key
 
 To generate a private signing key using `keytool`, on Windows `keytool` must run from
 
@@ -32,7 +32,7 @@ To generate a private signing key using `keytool`, on Windows `keytool` must run
   
   The keystore contains a single key, valid for 10000 days. The alias is a name that will use later when signing the app, one should remember to take note of the alias.
   
-### Setting up Gradle Variables
+## Setting up Gradle Variables
 
 1. Place the `my-release-key.keystore` file under the `android/app` directory in the project folder.
 2. Edit the file `~/.gradle/gradle.properties` or `android/gradle.properties` and add the following (replace `*****` with the correct keystore password, alias and key password),
