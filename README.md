@@ -46,4 +46,5 @@ MYAPP_RELEASE_KEY_PASSWORD=*****
 
 These are going to be global gradle variables, which can later use in the gradle config to sign the app.
 
+> **Note about saving the keystore:**
 
