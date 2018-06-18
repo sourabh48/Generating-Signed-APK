@@ -3,8 +3,6 @@
 
 Android requires that all apps be digitally signed with a certificate before they can be installed, so to distribute the Android application via [Google Play store](https://play.google.com/store), a signed release APK is needed.
 
-## Installation
-
 ## Requirements
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 * [Android Studio](https://developer.android.com/studio/)
