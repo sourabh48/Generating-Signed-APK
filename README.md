@@ -28,7 +28,7 @@ To generate a private signing key using `keytool`, on Windows `keytool` must run
   $ keytool -genkey -v -keystore my-release-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-  This command prompts for passwords for the keystore and key, and to provide the Distinguished Name fields for your key. It then generates the keystore as a file called `my-release-key.keystore`.
+  This command prompts for passwords for the keystore and key, and to provide the Distinguished Name fields for the key. It then generates the keystore as a file called `my-release-key.keystore`.
   
   The keystore contains a single key, valid for 10000 days. The alias is a name that will use later when signing the app, one should remember to take note of the alias.
   
