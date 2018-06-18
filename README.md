@@ -48,3 +48,6 @@ These are going to be global gradle variables, which can later use in the gradle
 
 > **Note about saving the keystore:**
 
+> Once the app is published on the Play Store, one will need to republish the app under a different package name (losing all downloads and ratings) if one want to change the signing key at any point. So backup the keystore and don't forget the passwords.
+
+
