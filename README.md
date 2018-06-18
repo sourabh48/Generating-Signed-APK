@@ -30,7 +30,7 @@ To generate a private signing key using `keytool`, on Windows `keytool` must run
   
   The keystore contains a single key, valid for 10000 days. The alias is a name that will use later when signing the app, one should remember to take note of the alias.
   
-## Setting up Gradle Variables
+### Setting up Gradle Variables
 
 1. Place the `my-release-key.keystore` file under the `android/app` directory in the project folder.
 2. Edit the file `~/.gradle/gradle.properties` or `android/gradle.properties` and add the following (replace `*****` with the correct keystore password, alias and key password),
@@ -48,4 +48,36 @@ These are going to be global gradle variables, which can later use in the gradle
 
 > Once the app is published on the Play Store, one will need to republish the app under a different package name (losing all downloads and ratings) if one wants to change the signing key at any point. So keystore must be backed up and passwords must not be forgotten.
 
+
+### Adding signing config to the app's gradle config
+
+Edit the file `android/app/build.gradle` in the project folder and add the signing config,
+
+```
+gradle
+...
+android {
+    ...
+    defaultConfig { ... }
+    signingConfigs {
+        release {
+            if (project.hasProperty('MYAPP_RELEASE_STORE_FILE')) {
+                storeFile file(MYAPP_RELEASE_STORE_FILE)
+                storePassword MYAPP_RELEASE_STORE_PASSWORD
+                keyAlias MYAPP_RELEASE_KEY_ALIAS
+                keyPassword MYAPP_RELEASE_KEY_PASSWORD
+            }
+        }
+    }
+    buildTypes {
+        release {
+            ...
+            signingConfig signingConfigs.release
+        }
+    }
+}
+...
+```
+
+### Generating the release APK
 
