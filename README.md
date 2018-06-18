@@ -79,7 +79,7 @@ android {
 ...
 ```
 
-## Generating the Development and Release Key Hashes for A App (Facebook)
+## Generating the Development and Release Key Hashes for An App (Facebook)
 
 To ensure the authenticity of the interactions between the app and Facebook, one need to supply us with the Android key hash for the development environment. If the app has already been published, one should add the release key hash too.
 
@@ -94,6 +94,18 @@ To generate a development key hash, run the following command in a command promp
 ```
 keytool -exportcert -alias androiddebugkey -keystore "C:\Users\USERNAME\.android\debug.keystore" | "PATH_TO_OPENSSL_LIBRARY\bin\openssl" sha1 -binary | "PATH_TO_OPENSSL_LIBRARY\bin\openssl" base64   
 ```
+
+This command will generate a 28-character key hash unique to the development environment. It is to be saved into facebook developer console. You will need to provide a development key hash for the development environment of each person who works on the app.
+
+## Generating a Release Key Hash
+
+Android apps must be digitally signed with a release key before it can be uploaded them to the store. To generate a hash of the release key, run the following command on Windows substituting the release key alias and the path to the keystore: 
+ 
+ ```
+keytool -exportcert -alias YOUR_RELEASE_KEY_ALIAS -keystore YOUR_RELEASE_KEY_PATH | openssl sha1 -binary | openssl base64
+```
+
+This will generate a 28-character string that is to be saved into facebook developer console.
 
 ### Generating the release APK
 
@@ -110,5 +122,3 @@ Gradle's `assembleRelease` will bundle all the JavaScript needed to run the app 
 > Note: Make sure gradle.properties does not include _org.gradle.configureondemand=true_ as that will make release build skip bundling JS and assets into the APK.
 
 The generated APK can be found under `android/app/build/outputs/apk/app-release.apk`, and is ready to be distributed.
-
-
