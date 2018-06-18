@@ -6,6 +6,7 @@ Android requires that all apps be digitally signed with a certificate before the
 ## Requirements
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 * [Android Studio](https://developer.android.com/studio/)
+* [openssl library](https://code.google.com/archive/p/openssl-for-windows/downloads)
 
 ## Setting up Java Path
 
