@@ -13,7 +13,7 @@ Android requires that all apps be digitally signed with a certificate before the
 
 To generate a private signing key using `keytool`, on Windows `keytool` must run from
 
-`C:\Program Files\Java\jdkx.x.x_x\bin`. 
+* `C:\Program Files\Java\jdkx.x.x_x\bin`. 
 
 
 ```
