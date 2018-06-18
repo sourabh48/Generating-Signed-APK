@@ -9,6 +9,13 @@ Android requires that all apps be digitally signed with a certificate before the
 * [Java](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
 * [Android Studio](https://developer.android.com/studio/)
 
+### Setting up Java path
+
+Assuming you have installed Java in c:\Program Files\java\jdk directory −
+Right-click on 'My Computer' and select 'Properties'.
+Click the 'Environment variables' button under the 'Advanced' tab.
+Now, alter the 'Path' variable so that it also contains the path to the Java executable. Example, if the path is currently set to 'C:\WINDOWS\SYSTEM32', then change your path to read 'C:\WINDOWS\SYSTEM32;c:\Program Files\java\jdk\bin'.
+
 ### Generating a signing key
 
 To generate a private signing key using `keytool`, on Windows `keytool` must run from
