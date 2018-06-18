@@ -11,10 +11,11 @@ Android requires that all apps be digitally signed with a certificate before the
 
 ### Setting up Java path
 
-Assuming you have installed Java in c:\Program Files\java\jdk directory −
-Right-click on 'My Computer' and select 'Properties'.
-Click the 'Environment variables' button under the 'Advanced' tab.
-Now, alter the 'Path' variable so that it also contains the path to the Java executable. Example, if the path is currently set to 'C:\WINDOWS\SYSTEM32', then change your path to read 'C:\WINDOWS\SYSTEM32;c:\Program Files\java\jdk\bin'.
+  Assuming Java is installed in `C:\Program Files\Java\jdkx.x.x_x` directory −
+* Right-click on `My Computer` and select `Properties`.
+* Click the `Environment variables` button under the `Advanced` tab.
+* Now, click on the `Path` variable so that it also contains the path to the Java executable.
+* Now add the path `C:\Program Files\Java\jdkx.x.x_x\bin`
 
 ### Generating a signing key
 
