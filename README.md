@@ -97,7 +97,7 @@ keytool -exportcert -alias androiddebugkey -keystore "C:\Users\USERNAME\.android
 
 This command will generate a 28-character key hash unique to the development environment. It is to be saved into facebook developer console. You will need to provide a development key hash for the development environment of each person who works on the app.
 
-## Generating a Release Key Hash
+### Generating a Release Key Hash
 
 Android apps must be digitally signed with a release key before it can be uploaded them to the store. To generate a hash of the release key, run the following command on Windows substituting the release key alias and the path to the keystore: 
  
